@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <title>Mustafa Acar - Portfolio</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: Arial, sans-serif;
       background: #0b0b0b;
@@ -17,40 +11,31 @@
       padding: 20px;
     }
 
-    .card {
-      background: #111111;
+    .container {
+      background: #111;
       padding: 30px;
       border-radius: 14px;
       width: 90%;
       max-width: 900px;
       margin: 20px auto;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
       border: 1px solid #bfa23a;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
     }
 
     h1 {
       color: #f9d857;
       font-size: 32px;
-      margin-bottom: 5px;
     }
 
     h2 {
       color: #f3c94b;
-      margin-top: 25px;
-      margin-bottom: 10px;
       border-bottom: 1px solid #333;
       padding-bottom: 5px;
-      font-size: 20px;
-    }
-
-    p {
-      margin: 6px 0;
-      line-height: 1.6;
+      margin-top: 20px;
     }
 
     .subtitle {
-      color: #cccccc;
-      font-size: 15px;
+      color: #ccc;
       margin-bottom: 10px;
     }
 
@@ -61,17 +46,12 @@
       border-radius: 20px;
       padding: 4px 10px;
       font-size: 12px;
-      margin-right: 6px;
-      margin-top: 6px;
+      margin: 5px 5px 0 0;
     }
 
     ul {
       margin-left: 20px;
-      margin-top: 8px;
-    }
-
-    li {
-      margin-bottom: 6px;
+      line-height: 1.6;
     }
 
     a {
@@ -79,87 +59,130 @@
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .lang-buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    .lang-buttons button {
+      background: #1b1b1b;
+      border: 1px solid #bfa23a;
+      color: #f3d069;
+      padding: 6px 12px;
+      margin-left: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .lang-buttons button:hover {
+      background: #bfa23a;
+      color: #000;
     }
 
     .footer {
-      margin-top: 25px;
+      margin-top: 20px;
       font-size: 13px;
-      color: #999;
+      color: #888;
     }
   </style>
-</head>
-<body>
-  <div class="card">
-    <h1>Mustafa Acar</h1>
-    <p class="subtitle">Erciyes Üniversitesi – Yazılım Mühendisliği (İngilizce) – 2. Sınıf</p>
 
-    <div>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = el.getAttribute("data-lang") === lang ? "block" : "none";
+      });
+    }
+  </script>
+</head>
+
+<body onload="switchLang('tr')">
+
+  <div class="container">
+
+    <!-- Dil butonları -->
+    <div class="lang-buttons">
+      <button onclick="switchLang('tr')">TR</button>
+      <button onclick="switchLang('en')">EN</button>
+    </div>
+
+    <!-- -------- TÜRKÇE -------- -->
+    <div data-lang="tr">
+      <h1>Mustafa Acar</h1>
+      <p class="subtitle">Erciyes Üniversitesi – Yazılım Mühendisliği (İngilizce) – 2. Sınıf</p>
+
       <span class="tag">Java</span>
       <span class="tag">OOP</span>
       <span class="tag">Swing</span>
       <span class="tag">Veri Yapıları</span>
       <span class="tag">Algoritmalar</span>
+
+      <h2>Hakkımda</h2>
+      <p>
+        Erciyes Üniversitesi Yazılım Mühendisliği (İngilizce) 2. sınıf öğrencisiyim.
+        Java ağırlıklı projeler geliştiriyor, OOP, veri yapıları ve algoritmalar alanında
+        kendimi geliştiriyorum. Küçük oyunlar, masaüstü uygulamalar ve temel sistem tasarımları
+        üzerine pratik yapıyorum. Hedefim backend alanında uzmanlaşmak.
+      </p>
+
+      <h2>Projelerim</h2>
+      <ul>
+        <li><strong>Library System</strong> – Kitap yönetimi, listeleme, silme ve ekleme işlevleri.</li>
+        <li><strong>E-Ticaret Sistemi</strong> – Ürün yönetimi, sepet ve sipariş akışı simülasyonu.</li>
+        <li><strong>Restoran Sipariş Formu</strong> – Java Swing ile oluşturulmuş sipariş takip sistemi.</li>
+        <li><strong>To-Do List</strong> – Görev ekleme / silme uygulaması.</li>
+        <li><strong>Sayı Tahmin Oyunu</strong> – Basit konsol oyunu, rastgele sayı mantığı.</li>
+        <li><strong>CekilisUygulamasi</strong> – Kullanıcı listesinden rastgele seçim yapan çekiliş sistemi.</li>
+        <li><strong>HesapMakinesi</strong> – Temel hesaplama işlemleri.</li>
+        <li><strong>AdvancedPersonTableApp</strong> – JTable kullanarak kişi listesi yönetimi.</li>
+        <li><strong>Uzay Oyunu</strong> – Küçük oyun prototipi.</li>
+      </ul>
+
+      <h2>İletişim</h2>
+      <p>Email: <a href="mailto:mstacr04@gmail.com">mstacr04@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/mstacr06" target="_blank">github.com/mstacr06</a></p>
     </div>
 
-    <h2>Hakkımda</h2>
-    <p>
-      Erciyes Üniversitesi Yazılım Mühendisliği (İngilizce) 2. sınıf öğrencisiyim. 
-      Java ağırlıklı projeler geliştiriyor, OOP, veri yapıları ve temel algoritmalar 
-      üzerinde kendimi geliştiriyorum. Masaüstü uygulamalar, küçük oyunlar ve temel 
-      sistem tasarımlarıyla pratik yapıyorum. Öğrenmeye açık, disiplinli ve ekip 
-      çalışmasına yatkın bir yapım var. Özellikle backend tarafında kendimi 
-      ilerletmeyi hedefliyorum.
-    </p>
+    <!-- -------- ENGLISH -------- -->
+    <div data-lang="en">
+      <h1>Mustafa Acar</h1>
+      <p class="subtitle">Erciyes University – Software Engineering (English) – 2nd Year</p>
 
-    <h2>Projelerim</h2>
-    <ul>
-      <li>
-        <strong>Library System</strong> – Kitap ekleme, silme ve listeleme fonksiyonlarına sahip
-        temel bir kütüphane yönetim sistemi. OOP mantığı ve dosya/veri yapıları kullanıldı.
-      </li>
-      <li>
-        <strong>E-Ticaret Sistemi</strong> – Ürün ekleme, sepet yönetimi ve sipariş akışını
-        simüle eden basit bir e-ticaret altyapısı. Sınıflar arası ilişkiler ve koleksiyonlar 
-        (ArrayList vb.) üzerinde çalışmak için geliştirildi.
-      </li>
-      <li>
-        <strong>Restoran Sipariş Formu</strong> – Java Swing ile hazırlanmış, masa/sipariş
-        takibi yapılabilen basit bir masaüstü arayüz uygulaması.
-      </li>
-      <li>
-        <strong>To-Do List</strong> – Kullanıcının görev ekleyip silebildiği, liste yönetimi 
-        yapan küçük bir görev takip uygulaması.
-      </li>
-      <li>
-        <strong>Sayı Tahmin Oyunu</strong> – Rastgele üretilen sayıyı belirli denemeler içinde
-        tahmin etmeye dayalı, temel mantık ve kontrol yapıları içeren konsol oyunu.
-      </li>
-      <li>
-        <strong>CekilisUygulamasi</strong> – Kullanıcı listesinden rastgele seçim yapan
-        çekiliş uygulaması. Random sınıfı ve koleksiyon kullanımı pratik edildi.
-      </li>
-      <li>
-        <strong>HesapMakinesi</strong> – Dört işlem ve bazı ek fonksiyonları destekleyen 
-        basit hesap makinesi (GUI veya konsol).
-      </li>
-      <li>
-        <strong>AdvancedPersonTableApp</strong> – Kişi bilgilerini tablo halinde 
-        görüntüleyen ve yönetebilen gelişmiş tablo uygulaması (muhtemelen Swing/JTable).
-      </li>
-      <li>
-        <strong>Uzay Oyunu</strong> – Basit bir uzay temalı oyun prototipi. Oyun mantığı,
-        olay yönetimi ve temel animasyon/pratik amaçlı geliştirme.
-      </li>
-    </ul>
+      <span class="tag">Java</span>
+      <span class="tag">OOP</span>
+      <span class="tag">Swing</span>
+      <span class="tag">Data Structures</span>
+      <span class="tag">Algorithms</span>
 
-    <h2>İletişim</h2>
-    <p>Email: <a href="mailto:mstacr04@gmail.com">mstacr04@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/mstacr06" target="_blank">github.com/mstacr06</a></p>
+      <h2>About Me</h2>
+      <p>
+        I am a 2nd-year Software Engineering student at Erciyes University.
+        I focus on Java-based development and continuously improve myself
+        in OOP, data structures, and algorithmic problem-solving. I enjoy
+        building small games, desktop apps, and simple system designs.
+        My main career goal is to specialize in backend development.
+      </p>
+
+      <h2>My Projects</h2>
+      <ul>
+        <li><strong>Library System</strong> – Book management: add, remove, and list functionality.</li>
+        <li><strong>E-Commerce System</strong> – Product management, cart logic, order simulation.</li>
+        <li><strong>Restaurant Order Form</strong> – Order-tracking desktop tool built with Swing.</li>
+        <li><strong>To-Do List</strong> – Task add/remove app.</li>
+        <li><strong>Number Guessing Game</strong> – Console game using random number logic.</li>
+        <li><strong>Lottery App</strong> – Random selection from a list using Java collections.</li>
+        <li><strong>Calculator</strong> – Basic calculator functions.</li>
+        <li><strong>AdvancedPersonTableApp</strong> – JTable-based person list manager.</li>
+        <li><strong>Space Game</strong> – Simple game prototype.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:mstacr04@gmail.com">mstacr04@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/mstacr06" target="_blank">github.com/mstacr06</a></p>
+    </div>
 
     <div class="footer">
-      <p>Bu sayfa GitHub Pages üzerinde barındırılmaktadır.</p>
+      <p>Hosted on GitHub Pages.</p>
     </div>
   </div>
 </body>
